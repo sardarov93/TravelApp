@@ -1,0 +1,355 @@
+
+{% extends 'index/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+    <div class="notebook_button">
+        <div class="left_button_notebook"></div>
+        <div class="all_notebook">
+            
+            <div class="notebook">
+                <img src="{% static 'images/rings.png' %}" alt="" class="rings">
+                <div class="page page-4">
+                    <button class="tab blue" style="top: 140px;">Info</button>
+                </div>
+                <div class="page page-3">
+                    <button class="tab green" style="top: 100px;">Текст</button>
+                </div>
+                <div class="page page-2">
+                    <button class="tab orange" style="top: 60px;">{{ london }}</button>
+                </div>
+                <div class="page page-1">
+                    <div class="content">
+                        <div>
+                            <h2>London</h2>
+                            <h5>Subtitle</h5>
+                        </div>
+                        <img src="{% static 'images/london.png' %}" alt="Лондон">
+                    </div>
+                </div>
+            </div>
+            <div class="notebook">
+                <img src="{% static 'images/rings.png' %}" alt="" class="rings">
+                <div class="page page-4">
+                    <button class="tab blue" style="top: 140px;">Info</button>
+                </div>
+                <div class="page page-3">
+                    <button class="tab green" style="top: 100px;">Текст</button>
+                </div>
+                <div class="page page-2">
+                    <button class="tab orange" style="top: 60px;">{{ tokyo }}</button>
+                </div>
+                <div class="page page-1">
+                    <div class="content">
+                        <div>
+                            <h2>Tokyo</h2>
+                            <h5>Subtitle</h5>
+                        </div>
+                        <img src="{% static 'images/japan.png' %}" alt="Лондон">
+                    </div>
+                </div>
+            </div>
+            <div class="notebook">
+                <img src="{% static 'images/rings.png' %}" alt="" class="rings">
+                <div class="page page-4">
+                    <button class="tab blue" style="top: 140px;">Info</button>
+                </div>
+                <div class="page page-3">
+                    <button class="tab green" style="top: 100px;">Текст</button>
+                </div>
+                <div class="page page-2">
+                    <button class="tab orange" style="top: 60px;">{{ newyork }}</button>
+                </div>
+                <div class="page page-1">
+                    <div class="content">
+                        <div>
+                            <h2>New-York</h2>
+                            <h5>Subtitle</h5>
+                        </div>
+                        <img src="{% static 'images/new_york.png' %}" alt="Лондон">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="right_button_notebook"></div>
+    </div>
+        <div class="flight-search">
+            <style>
+                .flight-search {
+                  position: sticky;
+                  top: 70px; /* отступ сверху, если есть шапка сайта */
+                  z-index: 1000;
+                  background-color: #fff;
+                  padding: 10px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }</style>
+            <div class="input-group">
+                <input type="text" placeholder="Откуда" />
+                <input type="text" placeholder="Куда" />
+                <input type="date" />
+                <div class="passenger-dropdown">
+                <img src="{% static 'images/human.png' %}" alt="пассажир" />
+                <div>
+                    <span>1 passenger</span>
+                    <small>eco</small>
+                </div>
+                <svg class="arrow" width="12" height="12" viewBox="0 0 24 24"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+                </div>
+            </div>
+            <button class="search-btn">I want to fly</button>
+        </div>
+        <div class="">
+            <div class="quote_sticker_2"></div>
+            <h3>" Nothing develops the mind so much as travel " – Émile Zola</h3>
+        </div>
+        <div class="">
+            <div class="quote_sticker_1"></div>
+            <h3>Not just tickets — but emotions too!</h3>
+        </div>
+        <div class="all_content">
+        <div class="container">
+            <div class="info_city">
+                <div class="description_city">
+                    <img class="img" src="{% static 'images/shymbulak.png' %}" alt="">
+                    <div class="description_city_text">
+                        <h1>Almaty</h1>
+                        <div>
+                         
+                            <h5>Located in a picturesque gorge of the Zailiyskiy Alatau, at an altitude of 2,200 meters above sea level, just 25 km from Almaty. It is the largest ski resort in the country</h5>
+                            <button class="button_orange">
+                                Подробнее
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="news">
+                  
+                    
+                    <h5><a href="https://www.bbc.com/travel/article/20250115-the-25-best-places-to-travel-in-2025">The 25 best places to travel in 2025</a></h5>
+                </div>
+            </div>
+            <div>
+                <div class="places">
+                    <div>
+                        <h1>Excursions</h1>
+                        <div class="places_city_all">
+                            <div class="places_city">
+                                <div class="places_city_text">
+                                    <div class="places_icon">
+                                        <img src="{% static 'images/geo_icon.png' %}" alt="">
+                                        <h5>Астана</h5>
+                                    </div>
+                                    <h2>Основные места Астаны</h2>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </h5>
+                                </div>
+                                <div class="places_city_buttons">
+                                    <button class="button_orange"> Хочу лететь! </button>
+                                    <button class="button_white"> Подробнее </button>
+                                </div>
+                            </div>
+                            <div class="places_city">
+                                <div class="places_city_text">
+                                    <div class="places_icon">
+                                        <img src="{% static 'images/geo_icon.png' %}" alt="">
+                                        <h5>Астана</h5>
+                                    </div>
+                                    <h2>Основные места Астаны</h2>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </h5>
+                                </div>
+                                <div class="places_city_buttons">
+                                    <button class="button_orange"> Хочу лететь! </button>
+                                    <button class="button_white"> Подробнее </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="places_info_city_all">
+                    <div class="places_info_city">
+                        <div>
+                            <h2>Основные места Астаны</h2>
+                            <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h4>
+                        </div>
+                    </div>
+                    <div class="places_tours">
+                        <div>
+                            <div class="places_tours_info">
+                                <h3>Более <br>туров</h3>
+                                <h1>100</h1>
+                            </div>
+                            <button class="button_orange">Подробнее! </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="care">
+                <div class="care_text">
+                    <h2>Наша забота о вашем путешествии</h2>
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</h4>
+                </div>
+                <div class="care_block_all">
+                    <div class="care_block">
+                        <img src="{% static 'images/icon_eat.png' %}" alt="">
+                        <h3>Авиабилеты</h3>
+                    </div>
+                    <div class="care_block">
+                        <img src="{% static 'images/icon_eat.png' %}" alt="">
+                        <h3>Авиабилеты</h3>
+                    </div>
+                    <div class="care_block">
+                        <img src="{% static 'images/icon_eat.png' %}" alt="">
+                        <h3>Авиабилеты</h3>
+                    </div>
+                    <div class="care_block">
+                        <img src="{% static 'images/icon_eat.png' %}" alt="">
+                        <h3>Авиабилеты</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="good_events">
+                <div>
+                    <div class="good_events_text">
+                        <h2>Мероприятия</h2>
+                        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </h4>
+                    </div>
+                    <div class="good_events_banner">
+                        <div class="info_geo_icon">
+                            <img src="{% static 'images/geo_icon.png' %}" alt="">
+                            <h5>С 21 по 27 января</h5>
+                        </div>
+                        <div class="all_circle">
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="banner_text">
+                            <h2>Благотворительный забег в Астане</h2>
+                            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="last_event_back">
+                <div>
+                    <h1>Последние события</h1>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore </h3>
+                    <div class="last_event_all">
+                        <div class="last_event">
+                            <div class="last_event_text">
+                                <h2>Смотровая Ранг Хилл</h2>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </h5>
+                            </div>
+                        </div>
+                        <div class="last_event">
+                            <div class="last_event_text">
+                                <h2>Смотровая Ранг Хилл</h2>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </h5>
+                            </div>
+                        </div>
+                        <div class="last_event">
+                            <div class="last_event_text">
+                                <h2>Смотровая Ранг Хилл</h2>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </h5>
+                            </div>
+                        </div>
+                        <div class="last_event">
+                            <div class="last_event_text">
+                                <h2>Смотровая Ранг Хилл</h2>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pets">
+                <div>
+                    <h2>
+                        Забота о ваших животных 
+                    </h2>
+                    <button class="button_orange">Подробнее</button>
+                </div>
+                <img src="{% static 'images/pets.png' %}" alt="">
+            </div>
+
+            <div class="also_see">
+                <div>
+                    <h2>Также смотрите:</h2>
+                    <div class="also_city_all">
+                        <div class="also_see_city">
+                            <div class="info_icon">
+                                <img src="{% static 'images/geo_icon.png' %}" alt="">
+                                <h5>Астана</h5>
+                            </div>
+                            <h2>Астана</h2>
+                        </div>
+                        <div class="also_see_city">
+                            <div class="info_icon">
+                                <img src="{% static 'images/geo_icon.png' %}" alt="">
+                                <h5>Астана</h5>
+                            </div>
+                            <h2>Астана</h2>
+                        </div>
+                        <div class="also_see_city">
+                            <div class="info_icon">
+                                <img src="{% static 'images/geo_icon.png' %}" alt="">
+                                <h5>Астана</h5>
+                            </div>
+                            <h2>Астана</h2>
+                        </div>
+                        <div class="also_see_city">
+                            <div class="info_icon">
+                                <img src="{% static 'images/geo_icon.png' %}" alt="">
+                                <h5>Астана</h5>
+                            </div>
+                            <h2>Астана</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="faq-container">
+                <div class="faq-left">
+                    <h2>Задаваемые вопросы</h2>
+                    <img src="{% static 'images/faq.png' %}" alt="">
+                </div>
+                <div class="faq-right">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Часто задаваемые вопросы</h3>
+                            <button class="toggle-btn">+</button>
+                        </div>
+                        <div class="faq-answer">Ответ на вопрос №1.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Часто задаваемые вопросы</h3>
+                            <button class="toggle-btn">+</button>
+                        </div>
+                        <div class="faq-answer">Ответ на вопрос №1.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Часто задаваемые вопросы</h3>
+                            <button class="toggle-btn">+</button>
+                        </div>
+                        <div class="faq-answer">Ответ на вопрос №1.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Часто задаваемые вопросы</h3>
+                            <button class="toggle-btn">+</button>
+                        </div>
+                        <div class="faq-answer">Ответ на вопрос №1.</div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+  
+    {% endblock %}

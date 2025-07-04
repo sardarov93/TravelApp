@@ -1,0 +1,1021 @@
+body{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* по горизонтали */
+  align-items: center;     /* по вертикали */
+  min-height: 100vh;       /* чтобы занимало всю высоту экрана */
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f9f9fb;
+}
+.all_content{
+  width: 100%;
+  background-color: #EFF1F4 ;
+  margin-top: 150px;
+}
+.quote{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 30px 30px 0px;
+  background-image: url(quote_back.png);
+  width: 340px;
+  height: 150px;
+}
+.quote h4{
+  color: white;
+  width: 90%;
+}
+.quote h2{
+  color: white;
+  margin: 0px;
+}
+.quote_text{
+  margin-left: 20px;
+}
+
+.clip{
+  top: -10px;
+  right: -20px;
+  position: absolute;
+}
+
+.quote_2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px 0px 0px 30px;
+  background-image: url(quote_back.png);
+  color: white;
+  width: 340px;
+  height: 150px;
+}
+.quote_text_2{
+  margin-left: 20px;
+}
+.img {
+  width: 650px;
+  height: 450px;
+  border-radius: 5%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.flight_quotes{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar {
+  position: relative; /* Для центрирования меню */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px; /* Меньше воздуха по бокам */
+  background-color: white;
+  border: 1px solid #e4e6eb; /* Аккуратная граница вместо тени */
+  border-radius: 12px;
+  margin: 20px auto;
+  width: 1280px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  flex: 0 0 auto;
+}
+
+.menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.menu-items {
+  display: flex;
+  gap: 14px;
+  background-color: #f0f1f4;
+  padding: 4px;
+  border-radius: 10px;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu-item img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;
+}
+
+.menu-item:hover {
+  background-color: #e0e3e8;
+}
+
+.menu-item.active {
+  background-color: #ff6a2f;
+  color: white;
+}
+
+.menu-item.active img {
+  filter: brightness(0) invert(1);
+}
+
+.profile {
+  flex: 0 0 auto;
+}
+
+.profile .menu-item {
+  background-color: #f0f1f4;
+}
+
+.profile .menu-item:hover {
+  background-color: #e0e3e8;
+}
+
+
+
+.flight-search {
+  display: flex;
+  align-items: center;
+  background-color: #f1f3f5;
+  border-radius: 14px;
+  padding: 8px;
+  width: 1000px;
+  margin: 30px auto;
+  }
+
+.input-group {
+  display: flex;
+  flex: 1;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e4e8;
+}
+
+.input-group input {
+  border: none;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  flex: 1;
+  border-right: 1px solid #eee;
+}
+
+.input-group input[type="date"] {
+  color: #666;
+}
+
+.passenger-dropdown {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.passenger-dropdown img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+}
+
+.passenger-dropdown div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.passenger-dropdown span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.passenger-dropdown small {
+  font-size: 12px;
+  color: #999;
+}
+
+.passenger-dropdown .arrow {
+  margin-left: auto;
+  color: #999;
+}
+
+.search-btn {
+  background-color: #ff6a2f;
+  color: white;
+  padding: 14px 22px;
+  margin-left: 10px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #ff823f;
+}
+
+
+.container{
+ 
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+h1{
+  font-family: "Urbanist", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0px;
+}
+h2{
+  font-family: "Urbanist", sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0px;
+}
+h3{
+  font-family: "Urbanist", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0px;
+}
+h4{
+  font-family: "Urbanist", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0px;
+}
+h5{
+  font-family: "Urbanist", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px;
+}
+h6{
+  font-family: "Urbanist", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  margin: 0px;
+}
+.description_city_text h1,h5 {
+  width: 350px ;
+}
+.description_city_text{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.description_city_text button{
+  margin-top: 15px;
+}
+.news {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-end;       
+  width: 260px;
+  height: 480px;
+  background-image: url(news.png);
+  background-size: cover;      
+  background-position: center; 
+  padding: 0px 0px 23px 23px;               
+}
+
+.news h5 {
+  color: white;
+  max-width: 220px;
+  margin: 0; /* убираем лишние отступы, если есть */
+}
+
+.info_city{
+  display: flex;
+  justify-content: center;
+  margin-top: -88px;
+  display: flex;
+  gap: 20px;
+}
+.places{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+  padding: 50px 0px;
+}
+.places_city{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 11px;
+  color: white;
+  width: 395px;
+  height: 395px;
+  background-image: url(astana_2.png);
+}
+.places_city h5{
+  max-width: 300px;
+}
+.places_city_text{
+  margin-left: 22px;
+  display: flex;
+  flex-direction: column;
+  max-width: 315px;
+  gap: 20px;
+}
+.button_orange {
+  background-color: #FF7F31;
+  color: white;
+  width: 115px;
+  height: 30px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(255, 127, 49, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button_orange:hover {
+  background-color: #ff914d;
+  box-shadow: 0 4px 10px rgba(255, 127, 49, 0.5);
+}
+
+.button_white {
+  background-color: white;
+  color: #333;
+  width: 115px;
+  height: 30px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button_white:hover {
+  background-color: #f1f1f1;
+  color: #000;
+  border-color: #999;
+}
+
+.places_city_buttons button{
+  width: 145px;
+  height: 40px;
+}
+.places h3{
+  max-width: 700px;
+}
+.places_city_buttons{
+  margin-left: 22px;
+}
+.places_icon {
+  display: flex;
+  align-items: center;     
+  gap: 6px;                
+  padding: 0 8px;           
+  background-color: white;
+  border-radius: 6px;
+  width: fit-content;
+  height:26px ;      
+}
+
+.places_icon h5 {
+  color: black;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.places_icon img {
+  margin: 0px;
+}
+.places_city_all{
+  margin-top: 40px;
+  display: flex;
+  gap: 30px;
+}
+.places_info_city{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  width: 60%;
+  background-color: white;
+}
+.places_info_city h2,h4{
+  max-width: 520px;
+}
+.places_info_city h2{
+  padding-bottom: 15px;
+}
+.places_tours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* вместо center — контент к левому краю */
+  width: 40%;
+  padding: 25px 0px;
+  background-color: white;
+  border-radius: 25px;
+}
+.places_tours h1{
+  font-size: 75px;
+}
+.places_tours h3{
+  font-weight: 700;
+  font-size: 27px;
+}
+.places_tours_info{
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  }
+.places_tours button{
+  margin-top: 11px;
+}
+.places_info_city_all {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px; /* расстояние между блоками */
+}
+.care{
+  width: 100%;
+  height: 500px;
+  background-color: white;
+  border-radius: 27px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.care_text{
+  height: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  }
+.care_text h2{
+  max-width: 470px;
+}
+.care_block {
+  position: relative; /* важно */
+  width: 190px;
+  height: 190px;
+  background-color: #FF7F31;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  overflow: hidden; /* чтобы не выходила картинка */
+}
+
+.care_block img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 70px;  /* Увеличиваем размер иконки */
+  height: auto;
+}
+.care_block h3{
+  font-weight: 600;
+  padding: 0px 0px 15px 15px;
+}
+.care_block_all{
+  display: grid;
+  gap: 19px;
+  grid-template-columns: repeat(2,1fr);
+}
+.last_event_all{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 30px;
+}
+.last_event_back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 25px;
+  width: 100%;
+  padding: 50px 0px ;
+}
+.last_event_back h3{
+  max-width: 600px;
+  margin-top: 15px;
+  margin-bottom: 60px;
+}
+.last_event{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  width: 395px;
+  height: 395px;
+  border-radius: 11px;
+  background-image: url(astana_2.png);
+}
+.last_event_text{
+  height: 100%;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.last_event h5,h2{
+  max-width: 300px;
+}
+.last_event_text h5{
+  margin-top: 70px;
+}
+.pets{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 50px 0px;
+  background-color: white;
+  border-radius: 25px;
+}
+.pets h2{
+  margin: 0px;
+  max-width: 450px;
+  margin-bottom: 30px;
+}
+.pets button{
+  width: 145px;
+  height: 40px;
+}
+.pets img{
+  margin-left: 120px;
+}
+.also_see{
+  border-radius: 20px;
+  background-color: white;
+  width: 100%;
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.also_see h2{
+  margin-bottom: 25px;
+}
+.also_see_city {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  color: white;
+  width: 205px;
+  height: 205px;
+  background-image: url(mini_astana.png);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Иконка в верхнем правом углу */
+.info_icon {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  background-color: white;
+  border-radius: 6px;
+  height: 26px;
+  color: black;
+}
+
+/* Заголовок в нижнем левом углу */
+.also_see_city h2 {
+  position: absolute;
+  bottom: 13px;
+  left: 13px;
+  margin: 0;
+}
+
+.info_icon h5 {
+  color: black;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.info_icon img {
+  margin: 0px;
+}
+.also_city_all{
+  display: flex;
+  gap: 20px;
+}
+footer {
+  font-family: sans-serif;
+  padding: 40px 20px 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-section {
+  max-width: 200px;
+}
+
+.logo-section p {
+  font-size: 13px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.logo {
+  width: 40px;
+  height: auto;
+}
+
+.social-icons a img {
+  width: 19px;
+  margin-right: 10px;
+  opacity: 0.7;
+}
+
+.footer-section h4 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 6px;
+}
+
+.footer-section ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.contact-section p {
+  font-size: 14px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-section img {
+  width: 16px;
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #666;
+  padding-top: 20px;
+  border-top: 1px solid #eaeaea;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom a {
+  color: #ff6600;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.notebook {
+  position: relative;
+  width: 250px;
+  aspect-ratio: 1 / 1;
+}
+
+.left_button_notebook{
+  width: 50px;
+  height: 50px;
+  background-image: url(left_button.svg);
+}
+.right_button_notebook{
+  width: 50px;
+  height: 50px;
+  background-image: url(right_button.svg);
+}
+.notebook_button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('notebook_sheet.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.rings {
+  z-index: 5;
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page-1 {
+  z-index: 3;
+}
+
+.page-2 {
+  top: 14px; /* увеличено с 12px */
+  left: 14px;
+  z-index: 2;
+}
+
+.page-3 {
+  top: 28px;
+  left: 28px;
+  z-index: 1;
+}
+
+.page-4 {
+  top: 42px;
+  left: 42px;
+  z-index: 1;
+}
+
+.tab {
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: -39px; /* между -30px и -40px */
+  width: 58px;  /* было 50px */
+  height: 32px; /* было 28px */
+  background: gray;
+  color: white;
+  font-size: 15px; /* немного больше */
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  font-family: "Urbanist", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab.blue {
+  background: #2196F3;
+}
+
+.tab.orange {
+  background: #FF9800;
+}
+
+.tab.green {
+  background: #4CAF50;
+}
+
+.content {
+  gap: 0px;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px 20px 20px;
+  text-align: center;
+}
+.content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.content h2 {
+  font-size: 40px;
+}
+.content h5 {
+  margin: 0px;
+}
+.content img {
+  width: 80%;
+}
+
+
+.all_notebook{
+  display: flex;
+  gap: 130px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+.faq-container {
+  display: flex;
+  align-items: center;
+  display: flex;
+  background: white;
+  border-radius: 16px;
+  padding: 50px;
+  width: 100%;
+}
+
+.faq-left {
+  margin-left: 30px;
+  margin-top: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.faq-left h2 {
+  margin-bottom: 20px;
+}
+
+.faq-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  background-color: #ff6a2f;
+  color: white;
+  border: none;
+  font-size: 18px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toggle-btn:hover {
+  background-color: #ff823f;
+}
+
+.faq-answer {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #444;
+  display: none;
+}
+.good_events {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
+  width: 100%;
+  background-color: white;
+  border-radius: 22px;
+}
+
+.good_events_banner {
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  width: 870px;
+  height: 400px;
+  background-image: url(the_run.png);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.good_events_text{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 0px;
+}
+.good_events_text h4{
+  max-width: 420px;
+}
+.banner_text {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  color: white;
+  width: 100%;
+}
+
+.banner_text h2,
+.banner_text h5 {
+  max-width: 45%;
+}
+.info_geo_icon {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 8px;
+  background-color: white;
+  border-radius: 6px;
+  width: fit-content;
+  height: 26px;
+  z-index: 999;
+}
+
+.info_geo_icon h5 {
+  color: black;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+.info_geo_icon img {
+  margin: 0px;
+}
+.circle{
+  background-color: white;
+  width: 11px;
+  height: 11px;
+  border-radius: 12px;
+}
+.all_circle{
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: end;
+  bottom: 20px;
+  position: absolute;
+  display: flex;
+  gap: 12px;
+}
+

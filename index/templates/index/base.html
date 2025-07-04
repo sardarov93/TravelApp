@@ -1,0 +1,294 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Главная</title>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<style>
+  .page {
+  position: absolute;
+  width: 85%; /* было 70%, теперь чуть больше */
+  height: 85%; /* было 70% */
+  background-image: url("{% static 'images/paper2.png' %}");
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+}
+.news {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: flex-end;       
+  width: 320px;
+  height: 480px;
+  background-image: url("{% static 'images/news.png' %}");
+  background-size: cover;      
+  background-position: center; 
+  padding: 0px 0px 23px 23px; 
+  border-radius: 25px;              
+}
+.news h5 a {
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.places_city{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 11px;
+  color: white;
+  width: 395px;
+  height: 395px;
+  background-image: url("{% static 'images/astana2.png' %}");
+}
+
+.also_see_city {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 11px;
+  color: white;
+  width: 205px;
+  height: 205px;
+  background-image: url("{% static 'images/mini_astana.png' %}");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.left_button_notebook{
+  width: 50px;
+  height: 50px;
+  background-image: url("{% static 'images/left_button.svg' %}");
+}
+.right_button_notebook{
+  width: 50px;
+  height: 50px;
+  background-image: url("{% static 'images/right_button.svg' %}");
+}
+
+.good_events_banner {
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  width: 870px;
+  height: 400px;
+  background-image: url("{% static 'images/the_run.png' %}");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+
+</style> 
+
+
+
+<nav class="navbar">
+  <div class="logo">Logo</div>
+  <div class="menu">
+      <a href="#" class="menu-item active">
+          <img src="{% static 'images/icon_home.png' %}" alt="home" />
+          Explore
+      </a>
+      <a href="#" class="menu-item">
+          <img src="{% static 'images/icon_home.png' %}" alt="section" />
+         Vibes
+      </a>
+      <a href="#" class="menu-item">
+          <img src="{% static 'images/icon_home.png' %}" alt="analytics" />
+          Safety
+      </a>
+      <a href="#" class="menu-item">
+          <img src="{% static 'images/icon_home.png' %}" alt="archive" />
+          Connect
+      </a>
+  </div>
+</div>
+    <div class="profile">
+     
+<!-- Кнопка "Профиль" -->
+<button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#profileModal">
+    Profile
+</button>
+
+<!-- Модалка Профиля -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">Профиль</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        {% if user.is_authenticated %}
+          <p>Добро пожаловать, {{ user.username }}!</p>
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Выход</button>
+          </form>
+        {% else %}
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Вход</button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</button>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модалка Входа -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="loginForm" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <div class="modal-header">
+          <h5 class="modal-title">Вход</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="username" class="form-control mb-2" placeholder="Логин" required>
+          <input type="password" name="password" class="form-control mb-2" placeholder="Пароль" required>
+          <div id="loginErrors" class="text-danger mt-2"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Войти</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Модалка Регистрации -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="registerForm" method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <div class="modal-header">
+          <h5 class="modal-title">Регистрация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="username" class="form-control mb-2" placeholder="Логин" required>
+          <input type="password" name="password1" class="form-control mb-2" placeholder="Пароль" required>
+          <input type="password" name="password2" class="form-control mb-2" placeholder="Повторите пароль" required>
+          <div id="registerErrors" class="text-danger mt-2"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+            
+        </div>
+    </nav>
+
+{% block content %}
+   
+{% endblock %}
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section logo-section">
+            <h2>Logo</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam</p>
+            <div class="social-icons">
+                <a href="#"><img src="{% static 'images/Twitter.svg' %}" alt="Twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="{% static 'images/Instagram.svg' %}" alt="Twitter"></a>
+                
+                <a href="#"><img src="{% static 'images/LinkedIn.svg' %}" alt="LinkedIn"></a>
+                <a href="#"><img src="{% static 'images/YouTube.svg' %}" alt="YouTube"></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h4>Product</h4>
+            <ul>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Case studies</a></li>
+                <li><a href="#">Reviews</a></li>
+                <li><a href="#">Updates</a></li>
+            </ul>
+        </div>
+  
+        <div class="footer-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+    
+        <div class="footer-section">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">Getting started</a></li>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Server status</a></li>
+                <li><a href="#">Report a bug</a></li>
+                <li><a href="#">Chat support</a></li>
+            </ul>
+        </div>
+  
+        <div class="footer-section contact-section">
+            <h4>Contacts us</h4>
+            <p><img src="{% static 'images/message.svg' %}" alt=""> company@gmail.com</p>
+            <p><img src="{% static 'images/phone.svg' %}" alt=""> +7(700) 000 0000</p>
+            <p><img src="{% static 'images/geo.svg' %}" alt=""> 794 McAllister St<br>San Francisco, 94102</p>
+        </div>
+    </div>
+  
+    <div class="footer-bottom">
+        <span>Компания ©</span>
+        <span>All Rights Reserved | <a href="#">Terms and Conditions</a> | <a href="#">Privacy Policy</a></span>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('.faq-question').forEach((question) => {
+        question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const btn = question.querySelector('.toggle-btn');
+        const isVisible = answer.style.display === 'block';
+
+        document.querySelectorAll('.faq-answer').forEach((el) => el.style.display = 'none');
+        document.querySelectorAll('.toggle-btn').forEach((b) => b.textContent = '+');
+
+        if (!isVisible) {
+            answer.style.display = 'block';
+            btn.textContent = '−';
+        }
+        });
+    });
+</script>
+
+</body>
+</html> 
